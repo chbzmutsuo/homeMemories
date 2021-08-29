@@ -1432,6 +1432,7 @@ Style sheet: ベーススタイル
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  display: none;
   -webkit-animation-name: pageIndex;
           animation-name: pageIndex;
   -webkit-animation-duration: 1.5s;

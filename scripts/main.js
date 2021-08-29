@@ -25,7 +25,7 @@
 
 
 
-document.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
     function randomImages() {
         //関数の引数に設定したid要素を変数に代入
         var box = document.querySelector('.main-content');

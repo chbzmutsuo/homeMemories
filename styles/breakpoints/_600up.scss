@@ -1,0 +1,38 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+/******************************************************************
+
+Style sheet: ベーススタイル
+
+******************************************************************/
+
+
+.main-visual{
+  &__title{
+    font-size: 50px;
+  }
+}
+
+
+.random-img{
+  box-shadow: 3px 3px 10px darkgrey;
+  width:$wrandom *1.2!important ;
+  height:$hrandom *1.2!important;
+  opacity: 0;
+
+  &:nth-child(2n){
+    width:$wrandom * 1.5 *1.2!important;
+    height:$hrandom * 1.5  *1.2!important;
+  }
+  &:nth-child(3n){
+    width:$wrandom * 2 *1.2!important;
+    height:$hrandom * 2 *1.2!important ;
+  }
+}
+
+
+
+

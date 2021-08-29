@@ -1,0 +1,46 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+.main-visual__title{
+  font-size: 100px;
+}
+.random-img{
+  box-shadow: 3px 3px 10px darkgrey;
+  width:$wrandom *1.5 !important;
+  height:$hrandom *1.5 !important;
+  opacity: 0;
+
+  &:nth-child(2n){
+    width:$wrandom * 1.5 *1.5 !important;
+    height:$hrandom * 1.5  *1.5 !important;
+  }
+  &:nth-child(3n){
+    width:$wrandom * 2 *1.5 !important;
+    height:$hrandom * 2 *1.5 !important;
+  }
+}
+
+#top-page-container{
+  $page-icon-size:120px !important;
+
+    .pageIndex{
+      width:$page-icon-size;
+      height:$page-icon-size;
+      
+      a{
+        width: $page-icon-size;
+      }
+      
+      .treeFrame{
+        width:$page-icon-size ;
+        height:$page-icon-size;
+      }
+    }
+    .Menu-btn{
+      width:$page-icon-size;
+      height:$page-icon-size;
+      }
+}

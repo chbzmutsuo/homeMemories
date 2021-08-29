@@ -1,0 +1,60 @@
+.random-img{
+  box-shadow: 3px 3px 5px rgb(90, 90, 90);
+  overflow: hidden;
+  border-radius: 10px;
+  width:$wrandom;
+  height:$hrandom;
+  opacity: 0;
+  cursor: pointer;
+  &:hover{
+    border: 3px double rgb(255, 196, 0);
+    z-index:100;
+  }
+  img{
+    width: 100%; height: 100%;
+  }
+
+  &:nth-child(2n){
+    width:$wrandom * 1.5;
+    height:$hrandom * 1.5 ;
+  }
+  &:nth-child(3n){
+    width:$wrandom * 1.8;
+    height:$hrandom * 1.8 ;
+  }
+
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      @include animation(
+        $name:floatUp,
+        $duration: 8s,
+        $timing-function: ease,
+        $iteration-count: infinite,
+        $delay: $i * .4s
+      );
+    }
+  }
+
+
+    @keyframes floatUp {
+      0%{
+        transform: scale(0);
+        opacity: 0;
+      }
+
+    40%{
+        transform: scale(1);
+        opacity: 1;
+        
+      }
+      90%{
+        transform: scale(0);
+        opacity: 1;
+      }
+      100%{
+        transform: scale(0);
+      }
+    }
+  
+
+}

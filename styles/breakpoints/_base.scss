@@ -1,0 +1,368 @@
+/******************************************************************
+
+Style sheet: ベーススタイル
+
+******************************************************************/
+
+
+
+.open{
+  display:block;
+}
+.flex-class{
+  display:flex;
+
+}
+
+
+// mixinの指定
+@mixin bg-image-lighten{
+  background-size:cover;
+  background-attachment: fixed;
+  background-color:rgba(255,255,255,0.7);
+  background-blend-mode:lighten;
+}
+
+
+//ボタン
+@mixin btn($bg-color,$color) {
+  background-color: $bg-color;
+  color: $color;
+  border-radius: 3px;
+  cursor: pointer;
+  &:hover{
+    opacity:0.7
+  }
+}
+
+// 次へ、前へボタン
+@mixin index-btn{
+  display: inline-block;
+  color: #4e90af;
+  background-color: #e0f5ff;
+  width: 40px;
+  padding: 6px 0;
+  margin: 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+// アニメーション
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}
+
+
+#top-page-container{
+  overflow: hidden;
+  padding: 0;
+  @extend .content-width;
+  $page-icon-size:90px;
+  height: 1000px;
+
+  header{
+    img{
+      width:100%;
+      margin:0 auto;
+    }
+  }
+
+
+  .index {
+    @extend .content-width;
+    margin-bottom:100px;
+    position:relative;
+    height:600px;
+    transform: translateX(-50px);
+    
+    .open{
+      display:block;
+    }
+
+    
+
+    .pageIndex{
+      list-style: none;
+      width:$page-icon-size;
+      height:$page-icon-size;
+      border-radius: 50%;
+      // position: absolute;
+      // display:none;
+
+
+      &:hover{
+        & a{
+          transform: scale(1.5);
+          transition: 1s;
+          background-color:rgba(0, 0, 0, 0);
+          color:rgba(59, 101, 197, 0.998);
+          font-weight: bolder;
+        }
+        & .bg-img{
+          opacity:.2;
+          transition: 1s;
+        }
+      }
+
+      @include animation ($name: pageIndex ,$timing-function:ease-in, $duration: 1.5s);
+      @keyframes pageIndex {
+        0%{
+          opacity:0;
+          
+        }
+        50%{
+          transform: rotate(400deg) ;
+          opacity:.2;
+        }
+        75%{
+          transform: rotate(400deg)  ;
+        }
+        100%{
+          transform:scale(.9) rotate(360deg)  ;
+          opacity:1;
+        }
+        
+      }
+
+      .bg-img{
+        border-radius: 50%;
+        position: absolute;
+        // width: 100%;
+        // height: 100%;
+        
+        
+      }
+
+      a{
+        color: rgba(0, 0, 0, 1);
+        background-color: rgba(255, 255, 255, 0.735);
+        width: $page-icon-size;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        position:absolute;  
+        text-align: center;
+        top:50%;
+        transform: translateY(-50%);
+     
+      }
+      
+      .treeFrame{
+        width:$page-icon-size ;
+        height:$page-icon-size;
+        display:none;
+        position: absolute;
+        float:center;
+        @include animation ($name:spread ,$timing-function:ease-in-out, $duration: 1.5s);
+        
+        }
+        
+        @keyframes spread {
+          100%{
+            transform: rotate(360deg);
+          }
+        }
+
+
+      }
+
+    
+
+
+    .Menu-btn{
+      position: absolute; left:50%; top:50%;
+      list-style: none;
+      width:$page-icon-size;
+      height:$page-icon-size;
+      border-radius: 50%;
+      background-color: rgba(209, 173, 43, 0.587);
+      text-align: center;
+      cursor: pointer;
+      
+      &:hover{
+        opacity:0.5;
+      }
+    }
+
+  
+
+    
+    .index1{position: absolute;left:15%;top:20%;}
+    .index2{position: absolute;left:50%;top:5%;}
+    .index3{position: absolute;left:85%;top:20%;}
+    .index4{position: absolute;left:100%;top:50%;}
+    .index5{position: absolute;left:85%;top:80%;  }
+    .index6{position: absolute;left:50%;top:95%;}
+    .index7{position: absolute;left:15%;top:80%;}
+    .index8{position: absolute;left:0%;top:50%;}
+  }
+}
+
+
+
+body {
+  font-family: "Kameron", "Noto Sans JP", sans-serif;
+  
+}
+
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.vertical-center{
+  margin-top:auto;
+  margin-bottom:auto;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 25px;
+}
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+.content-width{
+  width: 90%;
+  margin:0 auto;
+  max-width: $contentMaxWidth;
+}
+.main-title{
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+  display: block;
+}
+.sub-title{
+  @extend .font-sm;
+  color:$cSubTitle;
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+}
+
+#main-content{
+  position: relative;
+  z-index: 0;
+}
+
+main{
+  position: relative;
+  z-index: -1; //絶対配置にしていいた要素が勝手に上にくる
+}
+
+#wedding-page-container{
+  color: $cWhite;
+  background-color: $cbgcolor;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.5s, box-shadow 0.5s; 
+}
+
+.header{
+  background-color: transparent;
+  text-align: center;
+  height: $navHeight;
+  h1{
+    padding:20px;
+    font-size: 40px;
+  }
+}
+
+.main-visual{
+  position: relative;
+
+  &__title{
+    font-size: 30px;
+    position: absolute;
+    left:50px;
+    top:50%;
+    transform: translateY(-50%);
+
+  }
+  &__img{
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.main-content{
+  position: relative;
+  height: 700px;
+  overflow: hidden;
+  border: 5px double rgba(202, 126, 25, 0.747);
+  margin: 20px;
+  opacity: 0;
+  @include animation(
+    $name:fadeIn,
+    $duration: 5s,
+    $timing-function: ease-out
+  );
+
+  @keyframes fadeIn {
+    0%{
+      opacity: 0;
+      transform: scale(0)
+    }
+    100%{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &__title{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    height:max-content;
+    position: absolute;
+    @extend .font-lg;
+    top:50px;
+    left:50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    // transform-origin:
+    // perspective: -2000px;
+
+  }
+
+
+}

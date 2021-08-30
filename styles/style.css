@@ -1406,8 +1406,7 @@ Style sheet: ベーススタイル
 
 #top-page-container {
   overflow: hidden;
-  padding: 0;
-  height: 1000px;
+  height: 800px;
 }
 
 #top-page-container header img {
@@ -1418,7 +1417,7 @@ Style sheet: ベーススタイル
 #top-page-container .index {
   margin-bottom: 100px;
   position: relative;
-  height: 600px;
+  height: 350px;
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
 }
@@ -1432,6 +1431,7 @@ Style sheet: ベーススタイル
   width: 90px;
   height: 90px;
   border-radius: 50%;
+  position: absolute;
   display: none;
   -webkit-animation-name: pageIndex;
           animation-name: pageIndex;
@@ -1447,6 +1447,60 @@ Style sheet: ベーススタイル
           animation-direction: normal;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+#top-page-container .index .pageIndex:nth-child(1) {
+  position: absolute;
+  left: 30%;
+  top: 23%;
+}
+
+#top-page-container .index .pageIndex:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+}
+
+#top-page-container .index .pageIndex:nth-child(3) {
+  position: absolute;
+  left: 70%;
+  top: 23%;
+}
+
+#top-page-container .index .pageIndex:nth-child(4) {
+  position: absolute;
+  left: 90%;
+  top: 50%;
+}
+
+#top-page-container .index .pageIndex:nth-child(5) {
+  position: absolute;
+  left: 70%;
+  top: 77%;
+}
+
+#top-page-container .index .pageIndex:nth-child(6) {
+  position: absolute;
+  left: 50%;
+  top: 95%;
+}
+
+#top-page-container .index .pageIndex:nth-child(7) {
+  position: absolute;
+  left: 30%;
+  top: 77%;
+}
+
+#top-page-container .index .pageIndex:nth-child(8) {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+}
+
+#top-page-container .index .pageIndex:nth-child(9) {
+  position: absolute;
+  left: 30%;
+  top: 23%;
 }
 
 #top-page-container .index .pageIndex:hover a {
@@ -1577,54 +1631,6 @@ Style sheet: ベーススタイル
   opacity: 0.5;
 }
 
-#top-page-container .index .index1 {
-  position: absolute;
-  left: 15%;
-  top: 20%;
-}
-
-#top-page-container .index .index2 {
-  position: absolute;
-  left: 50%;
-  top: 5%;
-}
-
-#top-page-container .index .index3 {
-  position: absolute;
-  left: 85%;
-  top: 20%;
-}
-
-#top-page-container .index .index4 {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-}
-
-#top-page-container .index .index5 {
-  position: absolute;
-  left: 85%;
-  top: 80%;
-}
-
-#top-page-container .index .index6 {
-  position: absolute;
-  left: 50%;
-  top: 95%;
-}
-
-#top-page-container .index .index7 {
-  position: absolute;
-  left: 15%;
-  top: 80%;
-}
-
-#top-page-container .index .index8 {
-  position: absolute;
-  left: 0%;
-  top: 50%;
-}
-
 body {
   font-family: "Kameron", "Noto Sans JP", sans-serif;
 }
@@ -1673,10 +1679,10 @@ img {
   padding-bottom: 80px !important;
 }
 
-.content-width, #top-page-container, #top-page-container .index {
+.content-width, #top-page-container, #top-page-container .index, #wedding-page-container {
   width: 90%;
   margin: 0 auto;
-  max-width: 1070px;
+  max-width: 1000px;
 }
 
 .main-title {
@@ -1710,6 +1716,7 @@ main {
 }
 
 #wedding-page-container {
+  border: 5px double rgba(202, 126, 25, 0.747);
   color: white;
   background-color: #20223f;
   height: 100%;
@@ -1719,6 +1726,7 @@ main {
   transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
   transition: transform 0.5s, box-shadow 0.5s;
   transition: transform 0.5s, box-shadow 0.5s, -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+  overflow: hidden;
 }
 
 .header {
@@ -1734,6 +1742,7 @@ main {
 
 .main-visual {
   position: relative;
+  max-width: 1000px;
 }
 
 .main-visual__title {
@@ -1752,10 +1761,8 @@ main {
 
 .main-content {
   position: relative;
-  height: 700px;
-  overflow: hidden;
-  border: 5px double rgba(202, 126, 25, 0.747);
-  margin: 20px;
+  height: 600px;
+  margin: 0 30px;
   opacity: 0;
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
@@ -1852,6 +1859,30 @@ Style sheet: ベーススタイル
     width: 192px !important;
     height: 144px !important;
   }
+  #top-page-container {
+    height: 1000px;
+  }
+  #top-page-container .index {
+    height: 500px;
+  }
+  #top-page-container .pageIndex {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  #top-page-container .pageIndex a {
+    width: 110px !important;
+  }
+  #top-page-container .pageIndex .treeFrame {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  #top-page-container .Menu-btn {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  .main-content {
+    height: 800px;
+  }
 }
 
 @media (min-width: 960px) {
@@ -1878,6 +1909,12 @@ Stylesheet: 960px以上のモニタで適用
     width: 240px !important;
     height: 180px !important;
   }
+  #top-page-container {
+    height: 1200px;
+  }
+  #top-page-container .index {
+    height: 700px;
+  }
   #top-page-container .pageIndex {
     width: 120px !important;
     height: 120px !important;
@@ -1892,6 +1929,9 @@ Stylesheet: 960px以上のモニタで適用
   #top-page-container .Menu-btn {
     width: 120px !important;
     height: 120px !important;
+  }
+  .main-content {
+    height: 1000px;
   }
 }
 

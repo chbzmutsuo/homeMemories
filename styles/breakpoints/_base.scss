@@ -72,10 +72,9 @@ Style sheet: ベーススタイル
 
 #top-page-container{
   overflow: hidden;
-  padding: 0;
   @extend .content-width;
   $page-icon-size:90px;
-  height: 1000px;
+  height: 800px;
 
   header{
     img{
@@ -89,7 +88,7 @@ Style sheet: ベーススタイル
     @extend .content-width;
     margin-bottom:100px;
     position:relative;
-    height:600px;
+    height:350px;
     transform: translateX(-50px);
     
     .open{
@@ -103,8 +102,18 @@ Style sheet: ベーススタイル
       width:$page-icon-size;
       height:$page-icon-size;
       border-radius: 50%;
-      // position: absolute;
+      position: absolute;
       display:none;
+
+      &:nth-child(1){position: absolute;left:30%;top:23%;}
+      &:nth-child(2){position: absolute;left:50%;top:5%;}
+      &:nth-child(3){position: absolute;left:70%;top:23%;}
+      &:nth-child(4){position: absolute;left:90%;top:50%;}
+      &:nth-child(5){position: absolute;left:70%;top:77%;  }
+      &:nth-child(6){position: absolute;left:50%;top:95%;}
+      &:nth-child(7){position: absolute;left:30%;top:77%;}
+      &:nth-child(8){position: absolute;left:10%;top:50%;}
+      &:nth-child(9){position: absolute;left:30%;top:23%;}
 
 
       &:hover{
@@ -204,14 +213,7 @@ Style sheet: ベーススタイル
   
 
     
-    .index1{position: absolute;left:15%;top:20%;}
-    .index2{position: absolute;left:50%;top:5%;}
-    .index3{position: absolute;left:85%;top:20%;}
-    .index4{position: absolute;left:100%;top:50%;}
-    .index5{position: absolute;left:85%;top:80%;  }
-    .index6{position: absolute;left:50%;top:95%;}
-    .index7{position: absolute;left:15%;top:80%;}
-    .index8{position: absolute;left:0%;top:50%;}
+    
   }
 }
 
@@ -289,13 +291,19 @@ main{
   z-index: -1; //絶対配置にしていいた要素が勝手に上にくる
 }
 
+
+
+//wedding-begin
 #wedding-page-container{
+  border: 5px double rgba(202, 126, 25, 0.747);
+  @extend .content-width;
   color: $cWhite;
   background-color: $cbgcolor;
   height: 100%;
   position: relative;
   z-index: 10;
   transition: transform 0.5s, box-shadow 0.5s; 
+  overflow: hidden;
 }
 
 .header{
@@ -310,6 +318,8 @@ main{
 
 .main-visual{
   position: relative;
+  max-width: $contentMaxWidth;
+  
 
   &__title{
     font-size: 30px;
@@ -327,10 +337,8 @@ main{
 
 .main-content{
   position: relative;
-  height: 700px;
-  overflow: hidden;
-  border: 5px double rgba(202, 126, 25, 0.747);
-  margin: 20px;
+  height: 600px;
+  margin: 0 30px;
   opacity: 0;
   @include animation(
     $name:fadeIn,

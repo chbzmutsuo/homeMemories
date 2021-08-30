@@ -25,6 +25,11 @@ Stylesheet: 960px以上のモニタで適用
 
 #top-page-container{
   $page-icon-size:120px !important;
+  height: 1200px;
+
+  .index{
+    height: 700px;
+  }
 
     .pageIndex{
       width:$page-icon-size;
@@ -43,4 +48,8 @@ Stylesheet: 960px以上のモニタで適用
       width:$page-icon-size;
       height:$page-icon-size;
       }
+}
+
+.main-content{
+  height: 1000px;
 }

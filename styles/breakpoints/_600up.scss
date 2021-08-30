@@ -34,5 +34,42 @@ Style sheet: ベーススタイル
 }
 
 
+#top-page-container{
+  $page-icon-size:110px !important;
+  height: 1000px;
 
 
+  .index{
+    height: 500px;
+    
+  }
+    .pageIndex{
+      width:$page-icon-size;
+      height:$page-icon-size;
+      
+      a{
+        width: $page-icon-size;
+      }
+      
+      .treeFrame{
+        width:$page-icon-size ;
+        height:$page-icon-size;
+      }
+    }
+    .Menu-btn{
+      width:$page-icon-size;
+      height:$page-icon-size;
+      }
+}
+
+
+
+
+
+
+
+
+// wedding-begin
+.main-content{
+  height: 800px;
+}

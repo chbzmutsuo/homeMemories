@@ -25,54 +25,54 @@
 
 
 
-document.addEventListener('DOMContentLoaded', function () {
-    function randomImages() {
-        //関数の引数に設定したid要素を変数に代入
-        var box = document.querySelector('.main-content');
+// document.addEventListener('DOMContentLoaded', function () {
+//     function randomImages() {
+//         //関数の引数に設定したid要素を変数に代入
+//         var box = document.querySelector('.main-content');
       
-        //画像配列（ファイル名や連番等を入れる）
-        var imageList = [
-          'images/Wedding-img/wedding-img1',
-          'images/Wedding-img/wedding-img2',
-          'images/Wedding-img/wedding-img3',
-          'images/Wedding-img/wedding-img4',
-          'images/Wedding-img/wedding-img5',
-          'images/Wedding-img/wedding-img6',
-          'images/Wedding-img/wedding-img7',
-          'images/Wedding-img/wedding-img8',
-          'images/Wedding-img/wedding-img9',
-          'images/Wedding-img/wedding-img10',
-          'images/Wedding-img/wedding-img11',
-          'images/Wedding-img/wedding-img12',
-          'images/Wedding-img/wedding-img13',
-          'images/Wedding-img/wedding-img14',
-          'images/Wedding-img/wedding-img15',
-          'images/Wedding-img/wedding-img16',
-          'images/Wedding-img/wedding-img17',
-          'images/Wedding-img/wedding-img18',
-          'images/Wedding-img/wedding-img19',
-          'images/Wedding-img/wedding-img20',
-        ];
+//         //画像配列（ファイル名や連番等を入れる）
+//         var imageList = [
+//           '/images/Wedding-img/wedding-img1',
+//           '/images/Wedding-img/wedding-img2',
+//           '/images/Wedding-img/wedding-img3',
+//           '/images/Wedding-img/wedding-img4',
+//           '/images/Wedding-img/wedding-img5',
+//           '/images/Wedding-img/wedding-img6',
+//           '/images/Wedding-img/wedding-img7',
+//           '/images/Wedding-img/wedding-img8',
+//           '/images/Wedding-img/wedding-img9',
+//           '/images/Wedding-img/wedding-img10',
+//           '/images/Wedding-img/wedding-img11',
+//           '/images/Wedding-img/wedding-img12',
+//           '/images/Wedding-img/wedding-img13',
+//           '/images/Wedding-img/wedding-img14',
+//           '/images/Wedding-img/wedding-img15',
+//           '/images/Wedding-img/wedding-img16',
+//           '/images/Wedding-img/wedding-img17',
+//           '/images/Wedding-img/wedding-img18',
+//           '/images/Wedding-img/wedding-img19',
+//           '/images/Wedding-img/wedding-img20',
+//         ];
       
-        //配列の数だけ繰り返し処理
-        for( var i = 0; i < imageList.length; i++){
+//         //配列の数だけ繰り返し処理
+//         for( var i = 0; i < imageList.length; i++){
       
-          //縦横軸用の乱数生成
-          var x = Math.floor(Math.random() * 100);
-          var y = Math.floor(Math.random() * 100);
+//           //縦横軸用の乱数生成
+//           var x = Math.floor(Math.random() * 100);
+//           var y = Math.floor(Math.random() * 100);
     
-          var image = document.createElement("div");
-          image.innerHTML = `<img src="${imageList[i]}.JPG" alt="" style="top:${y}%; left:${x}%;">`;
-          image.classList.add("random-img");
-          image.style.position = "absolute";
-          image.style.left = `${x}%`;
-          image.style.top = `${y}%`;
-          box.appendChild(image);
-        }
-    }
+//           var image = document.createElement("div");
+//           image.innerHTML = `<img src="${imageList[i]}.JPG" alt="" style="top:${y}%; left:${x}%;">`;
+//           image.classList.add("random-img");
+//           image.style.position = "absolute";
+//           image.style.left = `${x}%`;
+//           image.style.top = `${y}%`;
+//           box.appendChild(image);
+//         }
+//     }
     
-    randomImages();    
-});
+//     randomImages();    
+// });
 
 
 
